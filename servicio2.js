@@ -74,7 +74,7 @@ function pintarDatos(datos){
         imagen.classList.add("card-img-top");
         imagen.src=cancion.album.images[0].url
 
-        let nombre = document.createElement('h3')
+        let nombre = document.createElement('h2')
         nombre.classList.add('card-title');
         nombre.textContent=cancion.name
 
@@ -85,6 +85,7 @@ function pintarDatos(datos){
         pop.classList.add('progress-bar');
         pop.setAttribute("style",data);
         pop.textContent=cancion.popularity
+        
 
         let song = document.createElement('audio')
         song.classList.add("w-100");
@@ -92,12 +93,17 @@ function pintarDatos(datos){
         song.setAttribute("controls","controls");
         song.src=cancion.preview_url
 
+        let popularidad = document.createElement('h4')
+        popularidad.classList.add('card-title');
+        popularidad.insertAdjacentText("afterbegin", "Popularidad de la canción ")
+
         
         
         tarjeta.appendChild(imagen);
         column.appendChild(tarjeta);
         row.appendChild(column);
         tarjeta.appendChild(nombre);
+        tarjeta.appendChild(popularidad);
         tarjeta.appendChild(pop);
         tarjeta.appendChild(song);
         
